@@ -13,7 +13,7 @@ copy .env.example .env<br>
 php artisan key:generate<br>
 <br>
 <br>
-<span>********************</span>change DB_DATABASE=laravel to DB_DATABASE=blog_db in .env file**<br>
+<span>********************</span>change DB_DATABASE=laravel to DB_DATABASE=blog_db in .env file<span>********************</span><br>
 <br>
 <br>
 php artisan migrate<br>
