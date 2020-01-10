@@ -9,8 +9,8 @@ git clone https://github.com/ZhuYi0101/laravel-blog-site.git<br>
 cd laravel-blog-site<br>
 composer install<br>
 npm install<br>
-php artisan db:seed<br>
 php artisan migrate<br>
+php artisan db:seed<br>
 php artisan serve<br>
 <br>
 <br>
