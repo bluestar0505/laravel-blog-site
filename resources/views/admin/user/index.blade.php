@@ -26,6 +26,7 @@
         </div>
 
         <h1 class="mt-5 text-center">Recent Blog</h1>
+        @if ($blogs->count() != 0)
         <div class="card-1 mt-3">
             <div class="card-header">
                 <div class="row">
@@ -41,5 +42,6 @@
                 <h6>{{$blogs[0]->body}}</h6>
             </div>
         </div>
+        @endif
     </div>
 @endsection
