@@ -20,6 +20,6 @@ Homepage URL::localhost:8000<br>
 <br>
 <br>
 Admin Account Information : <br>
-	Admin Name : superadmin
-	Admin Email : admin@gmail.com
-	Admin Password : 12345678
+	Admin Name : superadmin<br>
+	Admin Email : admin@gmail.com<br>
+	Admin Password : 12345678<br>
