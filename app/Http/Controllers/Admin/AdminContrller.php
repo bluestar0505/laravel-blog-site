@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 
-use \App\Http\Controllers\Service\AdminService as adminService;
-use \App\Http\Controllers\Service\BlogService as blogService;
-use \App\Http\Controllers\Service\UserService as userService;
-use \App\Http\Controllers\Service\CommentService as commentService;
+use \App\Http\Service\AdminService as adminService;
+use \App\Http\Service\BlogService as blogService;
+use \App\Http\Service\UserService as userService;
+use \App\Http\Service\CommentService as commentService;
 
 
 use Illuminate\Http\Request;
@@ -25,11 +25,11 @@ class AdminContrller extends Controller
         $userService = new userService();
         $commentService = new commentService();
     
-        $adminService->abort_admin(auth()->id());
+        $adminService->abortAdmin(auth()->id());
 
-        $user_count = $userService->get_count();
-        $blogs = $blogService->get_assoc();
-        $comment_count = $commentService->get_count();
+        $user_count = $userService->getCount();
+        $blogs = $blogService->getAssoc();
+        $comment_count = $commentService->getCount();
 
 
         return view('/admin/user/index', [
@@ -47,10 +47,10 @@ class AdminContrller extends Controller
         $userService = new userService();
         $commentService = new commentService();
     
-        $adminService->abort_admin(auth()->id());
+        $adminService->abortAdmin(auth()->id());
 
         
-        $users = $userService->get_all();
+        $users = $userService->getAll();
         
         return view('/admin/user/user', [
             'users' => $users
@@ -64,10 +64,10 @@ class AdminContrller extends Controller
         $userService = new userService();
         $commentService = new commentService();
     
-        $adminService->abort_admin(auth()->id());
+        $adminService->abortAdmin(auth()->id());
 
 
-        $blogs = $blogService->get_all();
+        $blogs = $blogService->getAll();
 
         return view('/admin/blog/blog', [
             'blogs' => $blogs
@@ -81,47 +81,47 @@ class AdminContrller extends Controller
         $userService = new userService();
         $commentService = new commentService();
     
-        $adminService->abort_admin(auth()->id());
+        $adminService->abortAdmin(auth()->id());
 
-        $comments = $commentService->get_all();
+        $comments = $commentService->getAll();
 
         return view('/admin/blog/comment', [
             'comments' => $comments
         ]);
     }
 
-    public function user_delete(Request $request)
+    public function userDelete(Request $request)
     {
         $adminService = new adminService();
         $blogService = new blogService();
         $userService = new userService();
         $commentService = new commentService();
     
-        $userService->delete_by_id($request->select_id);
+        $userService->deleteById($request->select_id);
 
         return back();
     }
 
-    public function blog_delete(Request $request)
+    public function blogDelete(Request $request)
     {
         $adminService = new adminService();
         $blogService = new blogService();
         $userService = new userService();
         $commentService = new commentService();
     
-        $blogService->delete_by_id($request->select_id);
+        $blogService->deleteById($request->select_id);
 
         return back();
     }
 
-    public function comment_delete(Request $request)
+    public function commentDelete(Request $request)
     {
         $adminService = new adminService();
         $blogService = new blogService();
         $userService = new userService();
         $commentService = new commentService();
     
-        $commentService->delete_by_id($request->select_id);
+        $commentService->deleteById($request->select_id);
 
         return back();
     }

@@ -156,21 +156,21 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link @yield('user')" href="{{ route('userlist_show') }}">
+                  <a class="nav-link @yield('user')" href="{{ route('userlist-show') }}">
                     <span data-feather="file"></span>
                     User Management
                   </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link @yield('blog')" href="{{ route('bloglist_show') }}">
+                    <a class="nav-link @yield('blog')" href="{{ route('bloglist-show') }}">
                       <span data-feather="file"></span>
                       Blog Management
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link @yield('comment')" href="{{ route('commentlist_show') }}">
+                    <a class="nav-link @yield('comment')" href="{{ route('commentlist-show') }}">
                       <span data-feather="file"></span>
                       Comment Management
                     </a>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\User;
-use \App\Http\Controllers\Service\CommentService as commentService;
+use \App\Http\Service\CommentService as commentService;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +15,7 @@ class CommentController extends Controller
         $commentService = new commentService();
     
 
-        $commentService->comment_store($blog_id, auth()->id());
+        $commentService->commentStore($blog_id, auth()->id());
 
         return redirect()->route('show-blog', ['blog' => $blog_id]);
     }

@@ -24,25 +24,24 @@
                 <h4>{{ $comment_count }}</h4>
             </div>
         </div>
-        
+
         <h1 class="mt-5 text-center">Recent Blog</h1>
         @if ($blogs->count() != 0)
-        <div class="card-1 mt-3">
-            <div class="card-header">
-                <div class="row">
-                    <div class="col-6">
-                        <h2>{{$blogs[0]->title}}</h2>
-                    </div>
-                    <div class="col pt-3">
-                        <span class="float-right  ml-4">Created At : {{$blogs[0]->created_at}}</span><span class="float-right">Auth : {{$blogs[0]->auth_name}}</span>
+            <div class="card-1 mt-3">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-6">
+                            <h2>{{$blogs[0]->title}}</h2>
+                        </div>
+                        <div class="col pt-3">
+                            <span class="float-right  ml-4">Created At : {{$blogs[0]->created_at}}</span><span class="float-right">Auth : {{$blogs[0]->auth_name}}</span>
+                        </div>
                     </div>
                 </div>
+                <div class="card-body">
+                    <h6>{{$blogs[0]->body}}</h6>
+                </div>
             </div>
-            <div class="card-body">
-                <h6>{{$blogs[0]->body}}</h6>
-            </div>
-        </div>
         @endif
-        
     </div>
 @endsection

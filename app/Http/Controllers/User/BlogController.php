@@ -5,9 +5,9 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use \App\Http\Controllers\Service\BlogService as blogService;
-use \App\Http\Controllers\Service\UserService as userService;
-use \App\Http\Controllers\Service\CommentService as commentService;
+use \App\Http\Service\BlogService as blogService;
+use \App\Http\Service\UserService as userService;
+use \App\Http\Service\CommentService as commentService;
 
 class BlogController extends Controller
 {
@@ -21,8 +21,8 @@ class BlogController extends Controller
         $commentService = new commentService();
     
     
-        $blogs = $blogService->get_assoc();
-        $user_type = $userService->get_type(auth()->id());
+        $blogs = $blogService->getAssoc();
+        $user_type = $userService->getType(auth()->id());
 
         return view('/user/blog/index', [
             'blogs' => $blogs,
@@ -35,7 +35,7 @@ class BlogController extends Controller
     {
         $userService = new userService();
     
-        $user_type = $userService->get_type(auth()->id());
+        $user_type = $userService->getType(auth()->id());
 
         $this->abortUser($user_type);
 
@@ -52,7 +52,7 @@ class BlogController extends Controller
     
         $blogService->store(auth()->id());
 
-        $user_type = $userService->get_type(auth()->id());
+        $user_type = $userService->getType(auth()->id());
 
         return redirect()->route('blogs');
     }
@@ -63,10 +63,10 @@ class BlogController extends Controller
         $userService = new userService();
         $commentService = new commentService();
 
-        $blogs = $blogService->get_by_id($blog);
+        $blogs = $blogService->getById($blog);
     
-        $comments = $commentService->get_by_blog_id($blogs->id);
-        $user_type = $userService->get_type(auth()->id());
+        $comments = $commentService->getByBlogId($blogs->id);
+        $user_type = $userService->getType(auth()->id());
 
         return view('/user/blog/show', [
             'blog'=>$blogs,
@@ -81,9 +81,9 @@ class BlogController extends Controller
         $userService = new userService();
 
         
-        $blogs = $blogService->get_by_id($blog);
+        $blogs = $blogService->getById($blog);
     
-        $user_type = $userService->get_type(auth()->id());
+        $user_type = $userService->getType(auth()->id());
 
         $this->abortUser($user_type);
 

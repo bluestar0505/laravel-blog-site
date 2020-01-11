@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Service;
+namespace App\Http\Service;
 
 use \App\Models\Blog;
 use \App\Models\User;
@@ -15,18 +15,18 @@ use Illuminate\Http\Request;
 
 class BlogService
 {
-    public function get_assoc()
+    public function getAssoc()
     {
         return Blog::latest()->get();
     }
 
-    public function get_all()
+    public function getAll()
     {
         return Blog::all();
     }
     
 
-    public function delete_by_id($id)
+    public function deleteById($id)
     {
         $blog = Blog::findOrFail($id);
         $blog->delete();
@@ -55,7 +55,7 @@ class BlogService
         $blog->delete();
     }
 
-    public function get_by_id($id)
+    public function getById($id)
     {
         $blog = Blog::findOrFail($id);
         return $blog;

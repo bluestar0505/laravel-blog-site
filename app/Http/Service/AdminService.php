@@ -1,14 +1,14 @@
 <?php
 
 
-namespace App\Http\Controllers\Service;
+namespace App\Http\Service;
 
 use \App\Models\User;
 
 
 class AdminService
 {
-    public function abort_admin($user_id)
+    public function abortAdmin($user_id)
     {
         
         $user_type = User::where('id', $user_id)->first()->user_type;

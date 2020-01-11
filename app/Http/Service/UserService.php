@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Controllers\Service;
+namespace App\Http\Service;
 
 
 use \App\Models\User;
@@ -10,23 +10,23 @@ use \App\Models\User;
 class UserService 
 {
     
-    public function get_count()
+    public function getCount()
     {
         return User::all()->count();
     }
     
-    public function get_all()
+    public function getAll()
     {
         return User::all();
     }
 
-    public function delete_by_id($id)
+    public function deleteById($id)
     {
         $user = User::findOrFail($id);
         $user->delete();
     }
 
-    public function get_type($id)
+    public function getType($id)
     {
         return User::where('id', $id)->first()->user_type;
     }

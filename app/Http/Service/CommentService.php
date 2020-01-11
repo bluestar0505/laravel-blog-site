@@ -2,7 +2,7 @@
 
 
 
-namespace App\Http\Controllers\Service;
+namespace App\Http\Service;
 use \App\Models\Comment;
 use \App\Models\User;
 
@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 class CommentService  
 {
     
-    public function comment_store($blog_id, $user_id)
+    public function commentStore($blog_id, $user_id)
     {
         request()->validate([
             'title' => 'required',
@@ -39,24 +39,24 @@ class CommentService
         $comment->delete();
     }
 
-    public function get_by_blog_id($blog_id)        
+    public function getByBlogId($blog_id)        
     {
         return Comment::latest()->where('blog_id', $blog_id)->get();
     }
 
 
-    public function delete_by_id($id)
+    public function deleteById($id)
     {
         $comment = Comment::findOrFail($id);
         $comment->delete();
     }
 
-    public function get_count()
+    public function getCount()
     {
         return Comment::all()->count();
     }
 
-    public function get_all()
+    public function getAll()
     {
         return Comment::all();
     }
