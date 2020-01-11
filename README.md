@@ -9,6 +9,13 @@ git clone https://github.com/ZhuYi0101/laravel-blog-site.git<br>
 cd laravel-blog-site<br>
 composer install<br>
 npm install<br>
+copy .env.example .env<br>
+php artisan key:generate<br>
+<br>
+<br>
+<div style="background-color:red;">change DB_DATABASE=laravel to DB_DATABASE=blog_db in .env file</div><br>
+<br>
+<br>
 php artisan migrate<br>
 php artisan db:seed<br>
 php artisan serve<br>
@@ -20,6 +27,6 @@ Homepage URL::localhost:8000<br>
 <br>
 <br>
 Admin Account Information : <br>
-	Admin Name : superadmin<br>
-	Admin Email : admin@gmail.com<br>
-	Admin Password : 12345678<br>
+	                    Admin Name : superadmin<br>
+	                    Admin Email : admin@gmail.com<br>
+	                    Admin Password : 12345678<br>
