@@ -13,7 +13,7 @@ Setting up your development environment on your local machine :<br>
 `php artisan key:generate`<br>
 <br>
 <br>
-### change DB_DATABASE=laravel to DB_DATABASE=blog_db in .env file<br>
+### change DB_DATABASE=laravel to DB_DATABASE=blog_db in .env file:<br>
 <br>
 <br>
 `php artisan migrate`<br>
